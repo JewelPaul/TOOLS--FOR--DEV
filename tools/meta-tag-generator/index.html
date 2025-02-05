@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tag Generator - Tools For Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <i class="fas fa-tools"></i>
+                Tools For Dev
+            </a>
+            <div class="nav-items">
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#categories" class="nav-link">Categories</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="tool-page" style="padding-top: 100px;">
+        <div class="tool-container">
+            <header class="tool-header">
+                <div class="gradient-text">Meta Tag Generator</div>
+                <p>Create optimized meta tags for better SEO. Generate title, description, and other essential meta tags for your website.</p>
+            </header>
+
+            <div class="tool-section">
+                <form id="metaForm" class="meta-form">
+                    <div class="form-group">
+                        <label for="pageTitle">Page Title (50-60 characters)</label>
+                        <input type="text" id="pageTitle" placeholder="Enter your page title..." maxlength="60">
+                        <span class="character-count" id="titleCount">0/60</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pageDescription">Meta Description (150-160 characters)</label>
+                        <textarea id="pageDescription" placeholder="Enter your page description..." maxlength="160"></textarea>
+                        <span class="character-count" id="descriptionCount">0/160</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="keywords">Keywords (comma-separated)</label>
+                        <input type="text" id="keywords" placeholder="keyword1, keyword2, keyword3...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" placeholder="Enter author name...">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="robots">Robots</label>
+                            <select id="robots">
+                                <option value="index, follow">Index, Follow</option>
+                                <option value="index, nofollow">Index, Nofollow</option>
+                                <option value="noindex, follow">Noindex, Follow</option>
+                                <option value="noindex, nofollow">Noindex, Nofollow</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="viewport">Viewport</label>
+                            <select id="viewport">
+                                <option value="width=device-width, initial-scale=1.0">Responsive (Recommended)</option>
+                                <option value="width=1024">Fixed Width (1024px)</option>
+                                <option value="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">No Zoom</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Social Media Preview</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="ogTags" checked>
+                                Open Graph (Facebook)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="twitterTags" checked>
+                                Twitter Cards
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="generate-btn">Generate Meta Tags</button>
+                </form>
+            </div>
+
+            <div class="tool-section result-section" style="display: none;">
+                <div class="result-header">
+                    <h2>Generated Meta Tags</h2>
+                    <button id="copyBtn" class="copy-btn">
+                        <i class="fas fa-copy"></i>
+                        Copy
+                    </button>
+                </div>
+                <pre><code class="result-code" id="metaResult"></code></pre>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Tools For Dev</h3>
+                <p>A comprehensive collection of free online tools designed to make developers' and designers' lives easier. Built with love by developers for developers.</p>
+                <div class="social-links">
+                    <a href="https://github.com/JewelPaul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pauljewel25/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/pages/contact.html"><i class="fas fa-chevron-right"></i>Contact Us</a></li>
+                    <li><a href="/pages/about.html"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                    <li><a href="/pages/privacy.html"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html"><i class="fas fa-chevron-right"></i>Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tools For Dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="../../script.js"></script>
+</body>
+</html>

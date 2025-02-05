@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Repeater - All-in-One Tools</title>
+    <meta name="description" content="Repeat text with custom separators and formatting. Perfect for creating patterns and testing layouts.">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="../../styles/tool-header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../../" class="nav-brand">
+                <i class="fas fa-tools"></i>
+                All-in-One Tools
+            </a>
+            <div class="nav-items">
+                <a href="../../#tools" class="nav-link">Tools</a>
+                <a href="../../#categories" class="nav-link">Categories</a>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding: 100px;">
+        <div class="tool-header">
+            <div class="container">
+                <h1>Text Repeater</h1>
+                <p>Repeat text multiple times with custom separators. Perfect for creating patterns and testing layouts.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="tool-container">
+                <div class="input-group">
+                    <label for="inputText">Text to Repeat</label>
+                    <textarea id="inputText" class="form-input" placeholder="Enter text to repeat..." rows="3"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="repeatCount">Number of Times</label>
+                    <input type="number" id="repeatCount" class="form-input" placeholder="Enter number of times" min="1" value="1">
+                </div>
+
+                <div class="input-group">
+                    <label for="separator">Separator (optional)</label>
+                    <input type="text" id="separator" class="form-input" placeholder="Enter separator (e.g., space, comma, newline)">
+                </div>
+
+                <div class="button-group">
+                    <button id="repeatBtn" class="btn btn-primary">
+                        <i class="fas fa-copy"></i> Repeat Text
+                    </button>
+                    <button id="copyBtn" class="btn btn-secondary">
+                        <i class="fas fa-clipboard"></i> Copy Result
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+
+                <div class="output-group">
+                    <label>Result</label>
+                    <textarea id="outputText" class="form-input" rows="8" readonly></textarea>
+                </div>
+            </div>
+
+            <div class="tool-instructions">
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Enter the text you want to repeat in the first text box</li>
+                    <li>Specify how many times you want to repeat it</li>
+                    <li>Optionally, add a separator between repetitions</li>
+                    <li>Click "Repeat Text" to generate the result</li>
+                    <li>Use "Copy Result" to copy the output to your clipboard</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Tools For Dev</h3>
+                <p>A comprehensive collection of free online tools designed to make developers' and designers' lives easier. Built with love by developers for developers.</p>
+                <div class="social-links">
+                    <a href="https://github.com/JewelPaul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pauljewel25/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/pages/contact.html"><i class="fas fa-chevron-right"></i>Contact Us</a></li>
+                    <li><a href="/pages/about.html"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                    <li><a href="/pages/privacy.html"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html"><i class="fas fa-chevron-right"></i>Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tools For Dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

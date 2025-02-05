@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator - All-in-One Tools</title>
+    <meta name="description" content="Create beautiful color gradients for your designs. Perfect for web designers and digital artists.">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../styles/tool-header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <i class="fas fa-tools"></i>
+                All-in-One Tools
+            </a>
+            <div class="nav-items">
+                <a href="../../#tools">Tools</a>
+                <a href="../../#categories">Categories</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tool-title-section">
+        <h1 class="tool-title">Gradient Generator</h1>
+        <p class="tool-description">Create beautiful color gradients for your designs. Perfect for web designers and digital artists.</p>
+    </div>
+
+    <main class="tool-page" style="padding-top: 100px;">
+        <div class="container">
+            <div class="tool-header">
+                <h1>Gradient Generator</h1>
+                <p class="tool-description">Create beautiful CSS gradients with custom colors, angles, and styles</p>
+            </div>
+
+            <div class="tool-container">
+                <div class="gradient-layout">
+                    <div class="preview-section">
+                        <div class="gradient-preview" id="gradientPreview">
+                            <div class="preview-controls">
+                                <button class="btn preview-size-btn active" data-size="normal">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </button>
+                                <button class="btn preview-size-btn" data-size="large">
+                                    <i class="fas fa-desktop"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="code-output">
+                            <pre><code id="cssOutput">background: linear-gradient(90deg, #4361EE 0%, #3B82F6 100%);</code></pre>
+                            <button class="btn btn-secondary" id="copyBtn">
+                                <i class="fas fa-copy"></i> Copy CSS
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="gradient-controls">
+                        <div class="control-group">
+                            <label>Gradient Type</label>
+                            <div class="type-buttons">
+                                <button class="btn btn-secondary active" data-type="linear">
+                                    <i class="fas fa-arrow-right"></i> Linear
+                                </button>
+                                <button class="btn btn-secondary" data-type="radial">
+                                    <i class="fas fa-circle"></i> Radial
+                                </button>
+                                <button class="btn btn-secondary" data-type="conic">
+                                    <i class="fas fa-sync-alt"></i> Conic
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="control-group" id="angleControl">
+                            <label>Angle: <span id="angleValue">90</span>°</label>
+                            <input type="range" id="angleSlider" min="0" max="360" value="90">
+                        </div>
+
+                        <div class="control-group">
+                            <label>Color Stops</label>
+                            <div class="color-stops" id="colorStops">
+                                <div class="color-stop">
+                                    <input type="color" value="#4361EE">
+                                    <input type="number" value="0" min="0" max="100">%
+                                    <button class="remove-stop"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="color-stop">
+                                    <input type="color" value="#3B82F6">
+                                    <input type="number" value="100" min="0" max="100">%
+                                    <button class="remove-stop"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary" id="addStopBtn">
+                                <i class="fas fa-plus"></i> Add Color Stop
+                            </button>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Quick Presets</label>
+                            <div class="gradient-presets" id="gradientPresets">
+                                <button class="preset-btn" style="background: linear-gradient(45deg, #FF416C, #FF4B2B)"></button>
+                                <button class="preset-btn" style="background: linear-gradient(45deg, #7F7FD5, #86A8E7, #91EAE4)"></button>
+                                <button class="preset-btn" style="background: linear-gradient(45deg, #8E2DE2, #4A00E0)"></button>
+                                <button class="preset-btn" style="background: linear-gradient(45deg, #F953C6, #B91D73)"></button>
+                                <button class="preset-btn" style="background: linear-gradient(45deg, #00B4DB, #0083B0)"></button>
+                                <button class="preset-btn" style="background: linear-gradient(45deg, #FC466B, #3F5EFB)"></button>
+                                <button class="preset-btn" style="background: linear-gradient(45deg, #11998E, #38EF7D)"></button>
+                                <button class="preset-btn" style="background: linear-gradient(45deg, #FC5C7D, #6A82FB)"></button>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn btn-primary" id="downloadBtn">
+                                <i class="fas fa-download"></i> Download PNG
+                            </button>
+                            <button class="btn btn-secondary" id="savePresetBtn">
+                                <i class="fas fa-save"></i> Save Preset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-message" id="success-message">
+                    <i class="fas fa-check"></i> <span id="successText">CSS code copied to clipboard!</span>
+                </div>
+            </div>
+
+            <div class="tool-instructions">
+                <h2>Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Multiple Types</h3>
+                        <p>Create linear, radial, and conic gradients with custom angles and positions</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-palette"></i>
+                        <h3>Color Stops</h3>
+                        <p>Add multiple color stops to create complex and beautiful gradients</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-download"></i>
+                        <h3>Export Options</h3>
+                        <p>Download as image or copy CSS code for your projects</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-save"></i>
+                        <h3>Save Presets</h3>
+                        <p>Save your favorite gradients for quick access later</p>
+                    </div>
+                </div>
+
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Choose a gradient type (linear, radial, or conic)</li>
+                    <li>Adjust the angle or position</li>
+                    <li>Add or modify color stops</li>
+                    <li>Copy the CSS code or download as an image</li>
+                    <li>Save your favorite gradients as presets</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Tools For Dev</h3>
+                <p>A comprehensive collection of free online tools designed to make developers' and designers' lives easier. Built with love by developers for developers.</p>
+                <div class="social-links">
+                    <a href="https://github.com/JewelPaul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pauljewel25/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/pages/contact.html"><i class="fas fa-chevron-right"></i>Contact Us</a></li>
+                    <li><a href="/pages/about.html"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                    <li><a href="/pages/privacy.html"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html"><i class="fas fa-chevron-right"></i>Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tools For Dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

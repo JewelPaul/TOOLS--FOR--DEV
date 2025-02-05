@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator - Tools For Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <i class="fas fa-tools"></i>
+                Tools For Dev
+            </a>
+            <div class="nav-items">
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#categories" class="nav-link">Categories</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="tool-page" style="padding-top: 100px;">
+        <div class="tool-container">
+            <header class="tool-header">
+                <div class="gradient-text">Password Generator</div>
+                <p>Create strong, secure passwords with customizable options for length and character types.</p>
+            </header>
+
+            <div class="tool-section">
+                <div class="password-display">
+                    <input type="text" id="passwordOutput" readonly>
+                    <button id="copyBtn" class="copy-btn" aria-label="Copy password">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <button id="refreshBtn" class="refresh-btn" aria-label="Generate new password">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+
+                <div class="password-strength">
+                    <div class="strength-meter">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                    <span class="strength-text" id="strengthText">Password Strength</span>
+                </div>
+
+                <form id="passwordForm" class="password-options">
+                    <div class="length-section">
+                        <label for="passwordLength">Password Length: <span id="lengthValue">16</span></label>
+                        <input type="range" id="passwordLength" min="8" max="64" value="16">
+                    </div>
+
+                    <div class="options-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="uppercase" checked>
+                            <span class="checkbox-text">
+                                <i class="fas fa-font"></i>
+                                Uppercase Letters
+                            </span>
+                        </label>
+                        
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="lowercase" checked>
+                            <span class="checkbox-text">
+                                <i class="fas fa-font fa-sm"></i>
+                                Lowercase Letters
+                            </span>
+                        </label>
+                        
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="numbers" checked>
+                            <span class="checkbox-text">
+                                <i class="fas fa-hashtag"></i>
+                                Numbers
+                            </span>
+                        </label>
+                        
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="symbols" checked>
+                            <span class="checkbox-text">
+                                <i class="fas fa-percentage"></i>
+                                Symbols
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="advanced-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="excludeSimilar">
+                            <span class="checkbox-text">
+                                <i class="fas fa-eye-slash"></i>
+                                Exclude Similar Characters (i, l, 1, L, o, 0, O)
+                            </span>
+                        </label>
+                        
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="excludeAmbiguous">
+                            <span class="checkbox-text">
+                                <i class="fas fa-ban"></i>
+                                Exclude Ambiguous Characters ({ } [ ] ( ) / \ ' " ` ~ , ; : . < >)
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="generate-btn">
+                        <i class="fas fa-key"></i>
+                        Generate Password
+                    </button>
+                </form>
+            </div>
+
+            <div class="info-section">
+                <h2>Password Security Tips</h2>
+                <ul class="security-tips">
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Use a minimum of 12 characters for strong security
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Mix uppercase, lowercase, numbers, and symbols
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Avoid using personal information in passwords
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Use different passwords for different accounts
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Consider using a password manager
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Tools For Dev</h3>
+                <p>A comprehensive collection of free online tools designed to make developers' and designers' lives easier. Built with love by developers for developers.</p>
+                <div class="social-links">
+                    <a href="https://github.com/JewelPaul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pauljewel25/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/pages/contact.html"><i class="fas fa-chevron-right"></i>Contact Us</a></li>
+                    <li><a href="/pages/about.html"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                    <li><a href="/pages/privacy.html"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html"><i class="fas fa-chevron-right"></i>Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tools For Dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="../../script.js"></script>
+</body>
+</html>

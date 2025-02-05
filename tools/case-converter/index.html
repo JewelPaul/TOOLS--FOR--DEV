@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Converter - Tools For Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <i class="fas fa-tools"></i>
+                Tools For Dev
+            </a>
+            <div class="nav-items">
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#categories" class="nav-link">Categories</a>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top: 100px;">
+        <div class="tool-header">
+            <div class="container">
+                <h1>Case Converter</h1>
+                <p>Convert text between different cases: uppercase, lowercase, title case, and more.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="tool-container">
+                <div class="input-group">
+                    <label for="input-text">Enter your text:</label>
+                    <textarea id="input-text" rows="5" placeholder="Type or paste your text here"></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-primary" data-case="upper">
+                        <i class="fas fa-arrow-up"></i> UPPERCASE
+                    </button>
+                    <button class="btn btn-primary" data-case="lower">
+                        <i class="fas fa-arrow-down"></i> lowercase
+                    </button>
+                    <button class="btn btn-primary" data-case="title">
+                        <i class="fas fa-font"></i> Title Case
+                    </button>
+                    <button class="btn btn-primary" data-case="camel">
+                        <i class="fas fa-code"></i> camelCase
+                    </button>
+                    <button class="btn btn-primary" data-case="snake">
+                        <i class="fas fa-grip-lines"></i> snake_case
+                    </button>
+                </div>
+
+                <div class="output-container">
+                    <div class="input-group">
+                        <label for="output-text">Result:</label>
+                        <textarea id="output-text" rows="5" readonly></textarea>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" id="copy-btn">
+                            <i class="fas fa-copy"></i> Copy to Clipboard
+                        </button>
+                        <button class="btn btn-secondary" id="clear-btn">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                    </div>
+                </div>
+
+                <div class="success-message" id="success-message">
+                    <i class="fas fa-check"></i> Text copied to clipboard!
+                </div>
+            </div>
+
+            <div class="tool-instructions">
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Enter or paste your text in the input field</li>
+                    <li>Click one of the case conversion buttons to transform your text</li>
+                    <li>The converted text will appear in the result field</li>
+                    <li>Click "Copy to Clipboard" to copy the result</li>
+                    <li>Use "Clear" to reset both fields</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Tools For Dev</h3>
+                <p>A comprehensive collection of free online tools designed to make developers' and designers' lives easier. Built with love by developers for developers.</p>
+                <div class="social-links">
+                    <a href="https://github.com/JewelPaul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pauljewel25/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../../#tools"><i class="fas fa-chevron-right"></i>All Tools</a></li>
+                    <li><a href="../../#categories"><i class="fas fa-chevron-right"></i>Categories</a></li>
+                    <li><a href="../../"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tools For Dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

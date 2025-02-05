@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator - Tools For Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body class="dark-mode">
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <i class="fas fa-tools"></i>
+                Tools For Dev
+            </a>
+            <div class="nav-items">
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#categories" class="nav-link">Categories</a>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top: 100px;">
+        <div class="tool-header">
+            <h1>QR Generator</h1>
+            <p>Create professional QR codes for websites, text, contact information, and more. Perfect for marketing materials, business cards, and digital sharing.</p>
+        </div>
+
+        <div class="container">
+            <div class="tool-container">
+                <div class="qr-layout">
+                    <div class="preview-section">
+                        <div class="qr-preview" id="qrPreview">
+                            <div id="qrcode"></div>
+                            <div class="preview-overlay" id="previewOverlay">
+                                <div class="drop-zone">
+                                    <i class="fas fa-image"></i>
+                                    <p>Drop logo here</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-actions">
+                            <button class="btn btn-primary" id="downloadBtn">
+                                <i class="fas fa-download"></i> Download QR Code
+                            </button>
+                            <div class="download-options">
+                                <button class="btn btn-secondary" data-format="png">PNG</button>
+                                <button class="btn btn-secondary" data-format="svg">SVG</button>
+                                <button class="btn btn-secondary" data-format="pdf">PDF</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qr-controls">
+                        <div class="control-group">
+                            <label>Content Type</label>
+                            <div class="type-buttons">
+                                <button class="btn btn-secondary active" data-type="text">
+                                    <i class="fas fa-font"></i> Text
+                                </button>
+                                <button class="btn btn-secondary" data-type="url">
+                                    <i class="fas fa-link"></i> URL
+                                </button>
+                                <button class="btn btn-secondary" data-type="sms">
+                                    <i class="fas fa-sms"></i> SMS
+                                </button>
+                                <button class="btn btn-secondary" data-type="phone">
+                                    <i class="fas fa-phone"></i> Phone
+                                </button>
+                                <button class="btn btn-secondary" data-type="email">
+                                    <i class="fas fa-envelope"></i> Email
+                                </button>
+                                <button class="btn btn-secondary" data-type="wifi">
+                                    <i class="fas fa-wifi"></i> WiFi
+                                </button>
+                                <button class="btn btn-secondary" data-type="vcard">
+                                    <i class="fas fa-address-card"></i> vCard
+                                </button>
+                                <button class="btn btn-secondary" data-type="geo">
+                                    <i class="fas fa-map-marker-alt"></i> Location
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Content</label>
+                            <div class="content-input active" data-type="text">
+                                <textarea class="form-input" rows="3" placeholder="Enter your text"></textarea>
+                            </div>
+                            <div class="content-input" data-type="url">
+                                <input type="url" class="form-input" placeholder="https://example.com">
+                            </div>
+                            <div class="content-input" data-type="sms">
+                                <input type="tel" class="form-input" placeholder="Phone number">
+                                <textarea class="form-input" rows="3" placeholder="Message"></textarea>
+                            </div>
+                            <div class="content-input" data-type="phone">
+                                <input type="tel" class="form-input" placeholder="Phone number">
+                            </div>
+                            <div class="content-input" data-type="email">
+                                <input type="email" class="form-input" placeholder="Email address">
+                                <input type="text" class="form-input" placeholder="Subject (optional)">
+                                <textarea class="form-input" rows="3" placeholder="Message (optional)"></textarea>
+                            </div>
+                            <div class="content-input" data-type="wifi">
+                                <input type="text" class="form-input" placeholder="Network name (SSID)">
+                                <input type="password" class="form-input" placeholder="Password">
+                                <select class="form-input">
+                                    <option value="WPA">WPA/WPA2</option>
+                                    <option value="WEP">WEP</option>
+                                    <option value="nopass">No Password</option>
+                                </select>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Hidden network
+                                </label>
+                            </div>
+                            <div class="content-input" data-type="vcard">
+                                <div class="vcard-grid">
+                                    <input type="text" class="form-input" placeholder="First Name">
+                                    <input type="text" class="form-input" placeholder="Last Name">
+                                    <input type="text" class="form-input" placeholder="Organization">
+                                    <input type="tel" class="form-input" placeholder="Phone">
+                                    <input type="email" class="form-input" placeholder="Email">
+                                    <input type="text" class="form-input" placeholder="Website">
+                                    <input type="text" class="form-input" placeholder="Street Address">
+                                    <input type="text" class="form-input" placeholder="City">
+                                    <input type="text" class="form-input" placeholder="State">
+                                    <input type="text" class="form-input" placeholder="ZIP Code">
+                                    <input type="text" class="form-input" placeholder="Country">
+                                </div>
+                            </div>
+                            <div class="content-input" data-type="geo">
+                                <div class="geo-input">
+                                    <input type="number" class="form-input" placeholder="Latitude" step="any">
+                                    <input type="number" class="form-input" placeholder="Longitude" step="any">
+                                </div>
+                                <button class="btn btn-secondary get-location-btn">
+                                    <i class="fas fa-location-arrow"></i> Get Current Location
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Style & Colors</label>
+                            <div class="style-grid">
+                                <div class="style-section">
+                                    <label>QR Pattern</label>
+                                    <div class="pattern-options">
+                                        <button class="pattern-btn active" data-pattern="squares">
+                                            <i class="fas fa-square"></i>
+                                            <span>Squares</span>
+                                        </button>
+                                        <button class="pattern-btn" data-pattern="dots">
+                                            <i class="fas fa-circle"></i>
+                                            <span>Dots</span>
+                                        </button>
+                                        <button class="pattern-btn" data-pattern="rounded">
+                                            <i class="fas fa-square-full"></i>
+                                            <span>Rounded</span>
+                                        </button>
+                                        <button class="pattern-btn" data-pattern="classy">
+                                            <i class="fas fa-star"></i>
+                                            <span>Classy</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="style-section">
+                                    <label>Corner Style</label>
+                                    <div class="corner-options">
+                                        <button class="corner-btn active" data-corner="square">
+                                            <i class="fas fa-square"></i>
+                                            <span>Square</span>
+                                        </button>
+                                        <button class="corner-btn" data-corner="rounded">
+                                            <i class="fas fa-circle"></i>
+                                            <span>Round</span>
+                                        </button>
+                                        <button class="corner-btn" data-corner="extra-rounded">
+                                            <i class="fas fa-certificate"></i>
+                                            <span>Extra Round</span>
+                                        </button>
+                                        <button class="corner-btn" data-corner="pointed">
+                                            <i class="fas fa-play"></i>
+                                            <span>Pointed</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="style-section">
+                                    <label>Size</label>
+                                    <select class="form-input" id="qrSize">
+                                        <option value="200">Small (200x200)</option>
+                                        <option value="300" selected>Medium (300x300)</option>
+                                        <option value="400">Large (400x400)</option>
+                                        <option value="500">Extra Large (500x500)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="color-section">
+                                <div class="color-scheme">
+                                    <label>Color Scheme</label>
+                                    <div class="scheme-options">
+                                        <button class="scheme-btn active" data-scheme="custom">
+                                            <div class="scheme-preview custom"></div>
+                                            <span>Custom</span>
+                                        </button>
+                                        <button class="scheme-btn" data-scheme="gradient">
+                                            <div class="scheme-preview gradient"></div>
+                                            <span>Gradient</span>
+                                        </button>
+                                        <button class="scheme-btn" data-scheme="rainbow">
+                                            <div class="scheme-preview rainbow"></div>
+                                            <span>Rainbow</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="color-pickers">
+                                    <div class="color-picker">
+                                        <label>Foreground Color</label>
+                                        <input type="color" value="#000000" id="fgColor">
+                                    </div>
+                                    <div class="color-picker">
+                                        <label>Background Color</label>
+                                        <input type="color" value="#FFFFFF" id="bgColor">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Logo (optional)</label>
+                            <div class="logo-controls">
+                                <div class="logo-input">
+                                    <input type="file" id="logoInput" accept="image/*" class="hidden">
+                                    <button class="btn btn-secondary upload-btn" id="uploadBtn">
+                                        <i class="fas fa-upload"></i> Upload Logo
+                                    </button>
+                                    <span class="or-text">or drag and drop</span>
+                                </div>
+                                <div class="logo-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="removeBackground">
+                                        Remove logo background
+                                    </label>
+                                    <div class="logo-size">
+                                        <label>Logo Size</label>
+                                        <input type="range" min="10" max="30" value="20" id="logoSize">
+                                        <span id="logoSizeValue">20%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-instructions">
+                <h2>Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-palette"></i>
+                        <h3>Custom Colors</h3>
+                        <p>Choose custom colors for QR code foreground and background</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-image"></i>
+                        <h3>Logo Support</h3>
+                        <p>Add your logo or image to the center of the QR code</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-download"></i>
+                        <h3>Multiple Formats</h3>
+                        <p>Download your QR code in PNG, SVG, or PDF format</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shapes"></i>
+                        <h3>Style Options</h3>
+                        <p>Choose from different QR code styles and patterns</p>
+                    </div>
+                </div>
+
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Select the content type (Text, URL, Email, or WiFi)</li>
+                    <li>Enter your content in the appropriate fields</li>
+                    <li>Customize colors, style, and size</li>
+                    <li>Optionally add a logo to your QR code</li>
+                    <li>Download in your preferred format</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Tools For Dev</h3>
+                <p>A comprehensive collection of free online tools designed to make developers' and designers' lives easier. Built with love by developers for developers.</p>
+                <div class="social-links">
+                    <a href="https://github.com/JewelPaul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pauljewel25/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/pages/contact.html"><i class="fas fa-chevron-right"></i>Contact Us</a></li>
+                    <li><a href="/pages/about.html"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                    <li><a href="/pages/privacy.html"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html"><i class="fas fa-chevron-right"></i>Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tools For Dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

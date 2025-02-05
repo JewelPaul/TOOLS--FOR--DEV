@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Counter - Tools For Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <i class="fas fa-tools"></i>
+                Tools For Dev
+            </a>
+            <div class="nav-items">
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#categories" class="nav-link">Categories</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="tool-section">
+            <div class="container">
+                <div class="tool-header">
+                    <h1>Letter Counter</h1>
+                    <p>Count characters, words, sentences and get detailed text analysis instantly. Perfect for writers, students, and content creators.</p>
+                </div>
+
+                <div class="main-content">
+                    <div class="editor-section">
+                        <div class="editor-header">
+                            <div class="editor-actions">
+                                <button class="btn btn-secondary" id="clearBtn">
+                                    <i class="fas fa-trash-alt"></i>
+                                    Clear Text
+                                </button>
+                                <button class="btn btn-secondary" id="copyBtn">
+                                    <i class="fas fa-copy"></i>
+                                    Copy Text
+                                </button>
+                            </div>
+                        </div>
+                        <textarea id="textInput" class="text-editor" placeholder="Type or paste your text here..."></textarea>
+                    </div>
+
+                    <div class="stats-section">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-text-height"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Characters</h3>
+                                    <div class="stat-numbers">
+                                        <span id="charCount">0</span>
+                                        <span class="stat-label">with spaces</span>
+                                    </div>
+                                    <div class="stat-numbers">
+                                        <span id="charNoSpaceCount">0</span>
+                                        <span class="stat-label">without spaces</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-font"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Words</h3>
+                                    <div class="stat-numbers">
+                                        <span id="wordCount">0</span>
+                                        <span class="stat-label">total words</span>
+                                    </div>
+                                    <div class="stat-numbers">
+                                        <span id="uniqueWordCount">0</span>
+                                        <span class="stat-label">unique words</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-align-left"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Sentences</h3>
+                                    <div class="stat-numbers">
+                                        <span id="sentenceCount">0</span>
+                                        <span class="stat-label">total sentences</span>
+                                    </div>
+                                    <div class="stat-numbers">
+                                        <span id="avgWordsPerSentence">0</span>
+                                        <span class="stat-label">words per sentence</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Reading Time</h3>
+                                    <div class="stat-numbers">
+                                        <span id="readingTime">0</span>
+                                        <span class="stat-label">minutes</span>
+                                    </div>
+                                    <div class="stat-numbers">
+                                        <span id="speakingTime">0</span>
+                                        <span class="stat-label">speaking time</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About All-in-One Tools</h3>
+                <p>A comprehensive collection of free online tools designed to make developers' and designers' lives easier. Built with love by developers for developers.</p>
+                <div class="social-links">
+                    <a href="https://github.com/JewelPaul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pauljewel25/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../../#tools"><i class="fas fa-chevron-right"></i>All Tools</a></li>
+                    <li><a href="../../#categories"><i class="fas fa-chevron-right"></i>Categories</a></li>
+                    <li><a href="../../"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 All-in-One Tools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

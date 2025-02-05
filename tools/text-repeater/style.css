@@ -1,0 +1,262 @@
+/* Dark mode styles */
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --accent-primary: #38bdf8;
+    --accent-secondary: #0ea5e9;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.tool-container {
+    background-color: var(--bg-secondary);
+}
+
+textarea, input {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.tool-header {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    padding: 120px 2rem 3rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.tool-header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.tool-header h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tool-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.dark-mode .tool-header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.tool-container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    border: 1px solid #e5e7eb;
+}
+
+.dark-mode .tool-container {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+.input-group, .output-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label, .output-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #ffffff;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+.btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* Result area styles */
+#outputText {
+    width: 100%;
+    min-height: 150px;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: monospace;
+    line-height: 1.5;
+}
+
+.dark-mode .form-input {
+    background: #1e293b;
+    color: #ffffff;
+    border-color: #475569;
+}
+
+.dark-mode .form-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    background: #1e293b;
+}
+
+.dark-mode textarea,
+.dark-mode input,
+.dark-mode .form-input {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border-color: #475569 !important;
+}
+
+.dark-mode textarea {
+    background: #0f172a;
+    color: white;
+}
+
+.dark-mode #outputText {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border: 1px solid #475569;
+}
+
+.dark-mode .tool-container textarea,
+.dark-mode .tool-container input {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+}
+
+/* Keep labels white in dark mode */
+.dark-mode label {
+    color: #f8fafc;
+}
+
+/* Exclude output text from general form input styles */
+.dark-mode .form-input:not(#outputText) {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.dark-mode .form-input:not(#outputText)::placeholder {
+    color: #64748b;
+}
+
+.dark-mode .btn-secondary {
+    background: #334155;
+    color: #f8fafc;
+    border: 1px solid #475569;
+}
+
+.dark-mode .btn-secondary:hover {
+    background: #475569;
+    border-color: #64748b;
+}
+
+.dark-mode .tool-instructions {
+    background: #1e293b;
+    border: 1px solid #334155;
+}
+
+.dark-mode .tool-instructions h2 {
+    color: #f8fafc;
+}
+
+.dark-mode .tool-instructions ol {
+    color: #e2e8f0;
+}
+
+.dark-mode .tool-instructions li {
+    color: #e2e8f0;
+}
+
+.tool-instructions {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.tool-instructions h2 {
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.tool-instructions ol {
+    padding-left: 1.5rem;
+    color: #475569;
+}
+
+.tool-instructions li {
+    margin-bottom: 0.5rem;
+}
+
+.output-group textarea.form-input {
+    min-height: 150px;
+    line-height: 1.5;
+}
+
+.dark-mode .output-group textarea.form-input {
+    background: #1e293b !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode #outputText {
+    background: #1e293b !important;
+    color: white !important;
+}
