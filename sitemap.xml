@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://toolsfordev.tech/</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/tools/case-converter/index.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/tools/text-repeater/index.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/tools/meta-tag-generator/index.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/tools/color-picker/index.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/tools/gradient-generator/index.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/tools/qr-generator/index.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/tools/letter-counter/index.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/tools/password-generator/index.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/pages/contact.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/pages/about.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/pages/privacy.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://toolsfordev.tech/pages/terms.html</loc>
+  <lastmod>2025-02-05T12:19:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
