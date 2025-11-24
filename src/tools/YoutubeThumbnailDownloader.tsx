@@ -17,7 +17,8 @@ export function YoutubeThumbnailDownloader() {
 
     for (const pattern of patterns) {
       const match = url.match(pattern);
-      if (match) return match[1] || match[0];
+      const id = match ? (match[1] || match[0]) : null;
+      if (id && /^[a-zA-Z0-9_-]{11}$/.test(id)) return id;
     }
     return null;
   };
