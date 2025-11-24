@@ -1,17 +1,25 @@
 import { type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 interface ToolLayoutProps {
   title: string;
   description?: string;
   breadcrumbs?: { label: string; href: string }[];
   children: ReactNode;
+  keywords?: string[];
 }
 
-export function ToolLayout({ title, description, breadcrumbs = [], children }: ToolLayoutProps) {
+export function ToolLayout({ title, description, breadcrumbs = [], children, keywords = [] }: ToolLayoutProps) {
   return (
-    <div className="mx-auto max-w-7xl">
+    <>
+      <SEO
+        title={title}
+        description={description || `${title} - Free online tool`}
+        keywords={[title.toLowerCase(), 'online tool', 'free', ...keywords]}
+      />
+      <div className="mx-auto max-w-7xl">
       {/* Breadcrumbs */}
       {breadcrumbs.length > 0 && (
         <nav className="mb-4 flex items-center space-x-2 text-sm text-slate-400">
@@ -40,5 +48,6 @@ export function ToolLayout({ title, description, breadcrumbs = [], children }: T
       {/* Content */}
       <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">{children}</div>
     </div>
+    </>
   );
 }

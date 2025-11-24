@@ -1,9 +1,16 @@
 import { tools, categories } from '../utils/tools';
 import { ToolCard } from '../components/ToolCard';
+import { SEO } from '../components/SEO';
 
 export function HomePage() {
   return (
-    <div className="space-y-12">
+    <>
+      <SEO
+        title="Home"
+        description="Access 50 professional tools for image processing, PDF manipulation, text utilities, converters, finance calculators, and more. All running entirely in your browser."
+        keywords={['online tools', 'image tools', 'pdf tools', 'text utilities', 'converters', 'finance calculators']}
+      />
+      <div className="space-y-12">
       {/* Hero Section */}
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold text-slate-100 sm:text-5xl">
@@ -40,5 +47,6 @@ export function HomePage() {
         );
       })}
     </div>
+    </>
   );
 }

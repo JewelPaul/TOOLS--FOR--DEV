@@ -1,6 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { categories, getToolsByCategory } from '../utils/tools';
 import { ToolCard } from '../components/ToolCard';
+import { SEO } from '../components/SEO';
 
 export function CategoryPage() {
   const { category } = useParams<{ category: string }>();
@@ -14,7 +15,13 @@ export function CategoryPage() {
   const categoryTools = getToolsByCategory(category!);
 
   return (
-    <div className="space-y-8">
+    <>
+      <SEO
+        title={categoryInfo.name}
+        description={`${categoryInfo.description} - Browse our collection of ${categoryTools.length} professional tools.`}
+        keywords={[categoryInfo.name.toLowerCase(), 'online tools', 'free tools']}
+      />
+      <div className="space-y-8">
       {/* Category Header */}
       <div>
         <h1 className="mb-2 text-3xl font-bold text-slate-100">{categoryInfo.name}</h1>
@@ -38,5 +45,6 @@ export function CategoryPage() {
         </div>
       )}
     </div>
+    </>
   );
 }
