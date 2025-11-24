@@ -4,6 +4,15 @@ import { ActionButton } from '../components/ActionButton';
 import { Copy } from 'lucide-react';
 import { toast } from 'sonner';
 
+function isSafeImageUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
 export function OpenGraphGenerator() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -112,7 +121,7 @@ ${siteName ? `<meta property="og:site_name" content="${siteName}">` : ''}
           {/* Social Card Preview */}
           {title && (
             <div className="overflow-hidden rounded-lg border border-slate-700 bg-slate-800">
-              {imageUrl && (
+              {isSafeImageUrl(imageUrl) && (
                 <img 
                   src={imageUrl} 
                   alt="Preview" 
