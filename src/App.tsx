@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { AppShell } from './components/AppShell';
 import { HomePage } from './pages/HomePage';
+import { CategoryPage } from './pages/CategoryPage';
 import { ImageCompressor } from './tools/ImageCompressor';
 import { ImageResizer } from './tools/ImageResizer';
 import { ImageCropper } from './tools/ImageCropper';
@@ -22,6 +23,36 @@ import { URLEncoder } from './tools/URLEncoder';
 import { Base64Converter } from './tools/Base64Converter';
 import { UUIDGenerator } from './tools/UUIDGenerator';
 import { PasswordGenerator } from './tools/PasswordGenerator';
+import { YoutubeThumbnailDownloader } from './tools/YoutubeThumbnailDownloader';
+import { QRCodeGenerator } from './tools/QRCodeGenerator';
+import { OpenGraphGenerator } from './tools/OpenGraphGenerator';
+import { HashtagGenerator } from './tools/HashtagGenerator';
+import { TweetToImage } from './tools/TweetToImage';
+import { UTMBuilder } from './tools/UTMBuilder';
+import { ColorConverter } from './tools/ColorConverter';
+import { NumberBaseConverter } from './tools/NumberBaseConverter';
+import { UnixTimestampConverter } from './tools/UnixTimestampConverter';
+import { JSONYAMLConverter } from './tools/JSONYAMLConverter';
+import { JSONCSVConverter } from './tools/JSONCSVConverter';
+import { PercentageCalculator } from './tools/PercentageCalculator';
+import { DiscountCalculator } from './tools/DiscountCalculator';
+import { ROICalculator } from './tools/ROICalculator';
+import { LoanCalculator } from './tools/LoanCalculator';
+import { AspectRatioCalculator } from './tools/AspectRatioCalculator';
+import { CSSMinifier } from './tools/CSSMinifier';
+import { JSMinifier } from './tools/JSMinifier';
+import { HTMLEntityEncoder } from './tools/HTMLEntityEncoder';
+import { UserAgentParser } from './tools/UserAgentParser';
+import { URLParser } from './tools/URLParser';
+import { SlugGenerator } from './tools/SlugGenerator';
+import { RandomStringGenerator } from './tools/RandomStringGenerator';
+import { BinaryTextTranslator } from './tools/BinaryTextTranslator';
+import { MorseCodeTranslator } from './tools/MorseCodeTranslator';
+import { PalindromeChecker } from './tools/PalindromeChecker';
+import { ReverseText } from './tools/ReverseText';
+import { MemeGenerator } from './tools/MemeGenerator';
+import { ImageColorExtractor } from './tools/ImageColorExtractor';
+import { SVGBlobGenerator } from './tools/SVGBlobGenerator';
 
 function App() {
   return (
@@ -30,6 +61,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AppShell />}>
           <Route index element={<HomePage />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
           
           {/* Image Tools */}
           <Route path="/tools/image-compressor" element={<ImageCompressor />} />
@@ -60,6 +92,48 @@ function App() {
           
           {/* Security Tools */}
           <Route path="/tools/password-generator" element={<PasswordGenerator />} />
+          
+          {/* Marketing Tools */}
+          <Route path="/tools/youtube-thumbnail-downloader" element={<YoutubeThumbnailDownloader />} />
+          <Route path="/tools/qr-code-generator" element={<QRCodeGenerator />} />
+          <Route path="/tools/open-graph-generator" element={<OpenGraphGenerator />} />
+          <Route path="/tools/hashtag-generator" element={<HashtagGenerator />} />
+          <Route path="/tools/tweet-to-image" element={<TweetToImage />} />
+          <Route path="/tools/utm-builder" element={<UTMBuilder />} />
+          
+          {/* Converter Tools */}
+          <Route path="/tools/color-converter" element={<ColorConverter />} />
+          <Route path="/tools/number-base-converter" element={<NumberBaseConverter />} />
+          <Route path="/tools/unix-timestamp-converter" element={<UnixTimestampConverter />} />
+          <Route path="/tools/json-yaml-converter" element={<JSONYAMLConverter />} />
+          <Route path="/tools/json-csv-converter" element={<JSONCSVConverter />} />
+          
+          {/* Finance Tools */}
+          <Route path="/tools/percentage-calculator" element={<PercentageCalculator />} />
+          <Route path="/tools/discount-calculator" element={<DiscountCalculator />} />
+          <Route path="/tools/roi-calculator" element={<ROICalculator />} />
+          <Route path="/tools/loan-calculator" element={<LoanCalculator />} />
+          <Route path="/tools/aspect-ratio-calculator" element={<AspectRatioCalculator />} />
+          
+          {/* Web Dev Tools */}
+          <Route path="/tools/css-minifier" element={<CSSMinifier />} />
+          <Route path="/tools/js-minifier" element={<JSMinifier />} />
+          <Route path="/tools/html-entity-encoder" element={<HTMLEntityEncoder />} />
+          <Route path="/tools/user-agent-parser" element={<UserAgentParser />} />
+          <Route path="/tools/url-parser" element={<URLParser />} />
+          <Route path="/tools/slug-generator" element={<SlugGenerator />} />
+          
+          {/* Text Extra Tools */}
+          <Route path="/tools/random-string-generator" element={<RandomStringGenerator />} />
+          <Route path="/tools/binary-text-translator" element={<BinaryTextTranslator />} />
+          <Route path="/tools/morse-code-translator" element={<MorseCodeTranslator />} />
+          <Route path="/tools/palindrome-checker" element={<PalindromeChecker />} />
+          <Route path="/tools/reverse-text" element={<ReverseText />} />
+          
+          {/* Image Extra Tools */}
+          <Route path="/tools/meme-generator" element={<MemeGenerator />} />
+          <Route path="/tools/image-color-extractor" element={<ImageColorExtractor />} />
+          <Route path="/tools/svg-blob-generator" element={<SVGBlobGenerator />} />
         </Route>
       </Routes>
     </BrowserRouter>

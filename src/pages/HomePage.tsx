@@ -13,7 +13,7 @@ export function HomePage() {
           </span>
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-slate-400">
-          Access 20 professional tools for image processing, PDF manipulation, text utilities, and more.
+          Access 50 professional tools for image processing, PDF manipulation, text utilities, and more.
           All running entirely in your browser.
         </p>
       </div>

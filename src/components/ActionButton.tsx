@@ -7,9 +7,10 @@ interface ActionButtonProps {
   onClick?: () => void;
   loading?: boolean;
   disabled?: boolean;
-  variant?: 'primary' | 'secondary' | 'danger';
+  variant?: 'primary' | 'secondary' | 'danger' | 'outline';
   icon?: ReactNode;
   className?: string;
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export function ActionButton({
@@ -20,21 +21,29 @@ export function ActionButton({
   variant = 'primary',
   icon,
   className,
+  size = 'md',
 }: ActionButtonProps) {
   const baseClasses =
-    'inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-all active:scale-95 disabled:cursor-not-allowed disabled:opacity-50';
+    'inline-flex items-center justify-center rounded-lg font-medium transition-all active:scale-95 disabled:cursor-not-allowed disabled:opacity-50';
+
+  const sizeClasses = {
+    sm: 'px-3 py-1.5 text-xs',
+    md: 'px-4 py-2 text-sm',
+    lg: 'px-6 py-3 text-base',
+  };
 
   const variantClasses = {
     primary: 'bg-indigo-500 text-white hover:bg-indigo-600 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-950',
     secondary: 'border border-slate-700 bg-slate-800 text-slate-100 hover:bg-slate-700 focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-slate-950',
     danger: 'bg-red-500 text-white hover:bg-red-600 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-slate-950',
+    outline: 'border border-slate-700 bg-transparent text-slate-100 hover:bg-slate-800 focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-slate-950',
   };
 
   return (
     <button
       onClick={onClick}
       disabled={disabled || loading}
-      className={cn(baseClasses, variantClasses[variant], className)}
+      className={cn(baseClasses, sizeClasses[size], variantClasses[variant], className)}
     >
       {loading ? (
         <>
