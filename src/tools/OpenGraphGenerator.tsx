@@ -113,9 +113,14 @@ ${siteName ? `<meta property="og:site_name" content="${siteName}">` : ''}
           {title && (
             <div className="overflow-hidden rounded-lg border border-slate-700 bg-slate-800">
               {imageUrl && (
-                <img src={imageUrl} alt="Preview" className="h-48 w-full object-cover" onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none';
-                }} />
+                <img 
+                  src={imageUrl} 
+                  alt="Preview" 
+                  className="h-48 w-full object-cover" 
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }} 
+                />
               )}
               <div className="p-4">
                 <div className="mb-1 text-sm text-slate-400">{url || 'example.com'}</div>

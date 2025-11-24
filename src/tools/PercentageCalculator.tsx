@@ -39,7 +39,7 @@ export function PercentageCalculator() {
         </div>
         <button
           onClick={calculateXofY}
-          className="rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
+          className="rounded-lg bg-indigo-600 px-4 py-2 text-white transition-colors hover:bg-indigo-700"
         >
           Calculate
         </button>

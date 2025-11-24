@@ -113,12 +113,17 @@ export function AppShell() {
               
               {/* Search Results Dropdown */}
               {showSearchResults && searchResults.length > 0 && (
-                <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-96 overflow-y-auto rounded-lg border border-slate-700 bg-slate-800 shadow-xl">
+                <div 
+                  className="absolute left-0 right-0 top-full z-50 mt-2 max-h-96 overflow-y-auto rounded-lg border border-slate-700 bg-slate-800 shadow-xl"
+                  role="listbox"
+                  aria-label="Search results"
+                >
                   {searchResults.map((tool) => (
                     <button
                       key={tool.id}
                       onClick={() => handleToolSelect(tool.path)}
                       className="flex w-full items-start gap-3 border-b border-slate-700 px-4 py-3 text-left transition-colors hover:bg-slate-700 last:border-b-0"
+                      role="option"
                     >
                       <tool.icon className="h-5 w-5 flex-shrink-0 text-indigo-400" />
                       <div>
@@ -131,7 +136,11 @@ export function AppShell() {
               )}
               
               {showSearchResults && searchResults.length === 0 && (
-                <div className="absolute left-0 right-0 top-full z-50 mt-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-center text-sm text-slate-400 shadow-xl">
+                <div 
+                  className="absolute left-0 right-0 top-full z-50 mt-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-center text-sm text-slate-400 shadow-xl"
+                  role="status"
+                  aria-live="polite"
+                >
                   No tools found
                 </div>
               )}
