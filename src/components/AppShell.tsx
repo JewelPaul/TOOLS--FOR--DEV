@@ -1,12 +1,28 @@
 import { useState } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Search, Settings, Home, Star } from 'lucide-react';
 import { cn } from '../utils/cn';
-import { categories } from '../utils/tools';
+import { categories, searchTools } from '../utils/tools';
 
 export function AppShell() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showSearchResults, setShowSearchResults] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const searchResults = searchQuery.trim() ? searchTools(searchQuery) : [];
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setShowSearchResults(e.target.value.trim().length > 0);
+  };
+
+  const handleToolSelect = (path: string) => {
+    navigate(path);
+    setSearchQuery('');
+    setShowSearchResults(false);
+  };
 
   return (
     <div className="flex h-screen bg-slate-950 text-slate-100">
@@ -89,8 +105,45 @@ export function AppShell() {
               <input
                 type="text"
                 placeholder="Search tools..."
+                value={searchQuery}
+                onChange={handleSearchChange}
+                onFocus={() => searchQuery.trim() && setShowSearchResults(true)}
                 className="w-64 rounded-lg border border-slate-700 bg-slate-800 py-2 pl-10 pr-4 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
               />
+              
+              {/* Search Results Dropdown */}
+              {showSearchResults && searchResults.length > 0 && (
+                <div 
+                  className="absolute left-0 right-0 top-full z-50 mt-2 max-h-96 overflow-y-auto rounded-lg border border-slate-700 bg-slate-800 shadow-xl"
+                  role="listbox"
+                  aria-label="Search results"
+                >
+                  {searchResults.map((tool) => (
+                    <button
+                      key={tool.id}
+                      onClick={() => handleToolSelect(tool.path)}
+                      className="flex w-full items-start gap-3 border-b border-slate-700 px-4 py-3 text-left transition-colors hover:bg-slate-700 last:border-b-0"
+                      role="option"
+                    >
+                      <tool.icon className="h-5 w-5 flex-shrink-0 text-indigo-400" />
+                      <div>
+                        <div className="font-medium text-slate-100">{tool.name}</div>
+                        <div className="text-xs text-slate-400">{tool.description}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+              
+              {showSearchResults && searchResults.length === 0 && (
+                <div 
+                  className="absolute left-0 right-0 top-full z-50 mt-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-center text-sm text-slate-400 shadow-xl"
+                  role="status"
+                  aria-live="polite"
+                >
+                  No tools found
+                </div>
+              )}
             </div>
           </div>
 
